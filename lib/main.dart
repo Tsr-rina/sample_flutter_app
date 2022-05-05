@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
       // アプリのテーマの変更(色)
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
+          backgroundColor: Colors.lightGreen,
+          foregroundColor: Colors.white
         ),
       ),
       home: const RandomWords(),
@@ -108,7 +108,7 @@ class _RandomWordsState extends State<RandomWords>{
   }
   void _pushSaved(){
     // ページ繊維を実装する
-    // pushメソッド→進む繊維
+    // pushメソッド→進む遷移
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (context) {
