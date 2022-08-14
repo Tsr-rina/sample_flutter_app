@@ -25,11 +25,11 @@ class MyApp extends StatelessWidget {
       // アプリのテーマの変更(色)
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.lightGreen,
+          backgroundColor: Colors.black,
           foregroundColor: Colors.white
         ),
       ),
-      home: const RandomWords(),
+      home: const HomePage(),
       // home: Scaffold(
       //   // bodyの設定
       //   appBar:  AppBar(
@@ -41,6 +41,103 @@ class MyApp extends StatelessWidget {
       //     child: RandomWords(),
       //   ),
       // ),
+    );
+  }
+}
+class HomePage extends StatefulWidget {
+  // const HomePage(this.user);
+  // final User user;
+  const HomePage({Key? key}): super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+class _HomePageState extends State<HomePage>{
+    
+
+  // final menu_list = ["Star","Post", "Repository", "Browsing", "Camera", "Image"];
+  final menu_list = ["Camera", "Image"];
+
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Home"),
+        // actions: <Widget>[
+        //   IconButton(
+        //     icon: const Icon(Icons.logout),
+        //     onPressed: () async {
+        //       // ログアウト処理
+        //       // 内部で保持しているログイン情報等が初期化される
+        //       await FirebaseAuth.instance.signOut();
+        //       // ログイン画面に遷移してチャット画面を破棄
+        //       await Navigator.of(context).pushReplacement(
+        //         MaterialPageRoute(builder: (context){
+        //           return const LoginPage();
+        //         }),
+        //       );
+        //     },
+        //   ),
+        // ],
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: menu_list.length,
+              itemBuilder: (BuildContext, int index){
+
+                return Card(
+                  child: ListTile(
+                    title: Text(menu_list[index]),
+                    // onTap: (){
+                    //   Navigator.of(context).push(
+                    //     MaterialPageRoute(builder: (context){
+
+                    //       if (index==0){
+                    //         return GoodSave(widget.user);
+                    //       }
+                    //       else if (index==1){
+                    //         return AddPostPage(widget.user);
+                    //       }
+                    //       else if (index==2){
+                    //         return RepositoryPage(widget.user);
+                    //       }
+                    //       else if (index==3){
+                    //         return Browsing(widget.user);
+                    //       }
+                    //       else if(index==4){
+                    //         return Camera(widget.user);
+                    //       }else {
+                    //         return Image_Reader(widget.user);
+                    //       }
+
+                    //     }),
+                    //   );
+                    // },
+                  ),
+                );
+                // Card(
+                //   child: ListTile(
+                //     title: Text(menu_list[1]),
+                //   ),
+                // );
+                // Card(
+                //   child: ListTile(
+                //     title: Text(menu_list[2]),
+                //   ),
+                // );
+                // Card(
+                //   child: ListTile(
+                //     title: Text(menu_list[3]),
+                //   ),
+                // );
+              },
+
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
