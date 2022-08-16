@@ -1,5 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:sample_flutter_app/arkit.dart';
+import 'arkit.dart';
 
 
 // 一番最初に実行しますよ
@@ -53,10 +55,10 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 class _HomePageState extends State<HomePage>{
-    
+ 
 
   // final menu_list = ["Star","Post", "Repository", "Browsing", "Camera", "Image"];
-  final menu_list = ["Camera", "Image"];
+  final menu_list = ["Camera", "Image","ARKit"];
 
   @override
   Widget build(BuildContext context){
@@ -90,31 +92,19 @@ class _HomePageState extends State<HomePage>{
                 return Card(
                   child: ListTile(
                     title: Text(menu_list[index]),
-                    // onTap: (){
-                    //   Navigator.of(context).push(
-                    //     MaterialPageRoute(builder: (context){
+                    onTap: (){
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context){
 
-                    //       if (index==0){
-                    //         return GoodSave(widget.user);
-                    //       }
-                    //       else if (index==1){
-                    //         return AddPostPage(widget.user);
-                    //       }
-                    //       else if (index==2){
-                    //         return RepositoryPage(widget.user);
-                    //       }
-                    //       else if (index==3){
-                    //         return Browsing(widget.user);
-                    //       }
-                    //       else if(index==4){
-                    //         return Camera(widget.user);
-                    //       }else {
-                    //         return Image_Reader(widget.user);
-                    //       }
+                          if (index==2){
+                            return ARKitPage();
+                          }else{
+                            return HomePage();
+                          }
 
-                    //     }),
-                    //   );
-                    // },
+                        }),
+                      );
+                    },
                   ),
                 );
                 // Card(
