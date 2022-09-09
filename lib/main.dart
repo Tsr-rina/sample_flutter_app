@@ -95,11 +95,12 @@ class _HomePageState extends State<HomePage>{
                     onTap: (){
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (context){
-
-                          if (index==2){
-                            return ARKitPage();
-                          }else{
+                          if (index==0){
                             return HomePage();
+                          }else if(index==1){
+                            return HomePage();
+                          }else{
+                            return ARKitPage();
                           }
 
                         }),
