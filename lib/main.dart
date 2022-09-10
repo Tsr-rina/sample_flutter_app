@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage>{
                           if (index==0){
                             return HomePage();
                           }else if(index==1){
-                            return HomePage();
+                            return ARKitPage();
                           }else{
                             return ARKitPage();
                           }

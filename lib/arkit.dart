@@ -23,10 +23,15 @@ class _ARKitPageState extends State<ARKitPage>{
   //   super.dispose();
   // }
   @override
-  Widget build(BuildContext context)=> Scaffold(
+  Widget build(BuildContext context){
+    return Scaffold(
     appBar: AppBar(
       title: const Text("ARKit in Flutter"),
     ),
-  );
+    body: Center(
+      child: const Text("ここはARKitのページです"),
+    ),
+    );
+  }
 
 }
