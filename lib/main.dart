@@ -23,12 +23,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context){
     // 自身のUIの構成情報
     return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Startup Name Generator',
       // アプリのテーマの変更(色)
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.white
+          backgroundColor: Colors.blue,
+
         ),
       ),
       home: const HomePage(),
@@ -58,7 +59,7 @@ class _HomePageState extends State<HomePage>{
  
 
   // final menu_list = ["Star","Post", "Repository", "Browsing", "Camera", "Image"];
-  final menu_list = ["Camera", "Image","ARKit"];
+  final menu_list = ["Camera", "Image","PM SHOW"];
 
   @override
   Widget build(BuildContext context){
